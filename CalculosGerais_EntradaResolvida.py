@@ -2,6 +2,7 @@ import math
 
 
 def pg2():
+    #PROBLEMAS DE ENTRADA COM PEÇAS MACIÇAS
     nvar = int(
         input(
             "Insira a quantidade de coordenadas (maior ou igual a 3), de forma que a figura fique sempre à esquerda: "))
@@ -14,7 +15,7 @@ def pg2():
         y = float(input(f"Insira o valor do {n}° Y: "))
         listax.append(x)
         listay.append(y)
-    #Aqui repete nos locais que são necessários, após o final da primeira e depois da segunda metade
+    #Aqui repete nos locais que são necessários, após o final da primeira e depois da segunda metade, para peças vazadas
         if n == metade:
             listax.append(listax[0])
             listay.append(listay[0])
