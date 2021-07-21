@@ -8,34 +8,18 @@ Lista_Y = []
 def Escolha_Parametros():
     #Garantia que a figura possa ser executada no programa
     while True:
-        Tipo_Figura = input("A poligonal se encontra como um objeto Maciço ou Vazado? ")
-        Tipo_Figura = Tipo_Figura.lower()
-        # Verfica se é numérico
-        while True:
-            Num_Vertices = input("Defina o número de vértices a serem considerados: ")
-            if Num_Vertices.isnumeric():
-                Num_Vertices = int(Num_Vertices)
-                break
-            else:
-                print("Não é numérico")
-                continue
-        #Verfica se a figura está dentro do escopo
-        if Tipo_Figura == "maciço":
-            Peca_Macica(Num_Vertices)
-        elif Tipo_Figura == "vazado":
-            Peca_Vazada(Num_Vertices)
+        Num_Vertices = input("Defina o número de vértices a serem considerados: ")
+        if Num_Vertices.isnumeric():
+            Num_Vertices = int(Num_Vertices)
+            break
         else:
-            print("O tipo de figura não foi reconhecido")
+            print("Não é um valor válido!")
             continue
-        break
-
-
+    Calculo_Peca(Num_Vertices)
     return Num_Vertices
 
 
-def Peca_Vazada(Numero_Vertices):
-    Metade = Numero_Vertices // 2
-    Metade_1 = Metade + 1
+def Calculo_Peca(Numero_Vertices):
     for numero in range(1, Numero_Vertices + 1):
         #Laço de repetição para verificação se o Número é int ou float
         while True:
@@ -50,35 +34,6 @@ def Peca_Vazada(Numero_Vertices):
             else:
                 print("Por favor, digite somente valores numéricos!")
                 continue
-
-        # Aqui repete nos locais que são necessários, após o final da primeira e depois da segunda metade
-        if numero == Metade:
-            Lista_X.append(Lista_X[0])
-            Lista_Y.append(Lista_Y[0])
-
-    Lista_X.append(Lista_X[Metade_1])
-    Lista_Y.append(Lista_Y[Metade_1])
-
-    Propriedades_Mecanicas(Numero_Vertices, Lista_X, Lista_Y)
-    return Lista_X, Lista_Y
-
-def Peca_Macica(Numero_Vertices):
-    for n in range(1, Numero_Vertices + 1):
-        # Laço de repetição para verificação se o Número é int ou float
-        while True:
-            X = input(f"Insira o valor do {n}° X: ")
-            Y = input(f"Insira o valor do {n}° Y: ")
-            if isnumber(X) and isnumber(Y):
-                X = float(X)
-                Y = float(Y)
-                Lista_X.append(X)
-                Lista_Y.append(Y)
-                break
-            else:
-                print("Por favor, digite somente valores numéricos!")
-                continue
-        Lista_X.append(Lista_X[0])
-        Lista_Y.append(Lista_Y[0])
 
     Propriedades_Mecanicas(Numero_Vertices, Lista_X, Lista_Y)
     return Lista_X, Lista_Y
