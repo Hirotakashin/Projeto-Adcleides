@@ -8,7 +8,7 @@ Lista_Y = []
 def Escolha_Parametros():
     #Garantia que a figura possa ser executada no programa
     while True:
-        Num_Vertices = input("Defina o número de vértices a serem considerados: ")
+        Num_Vertices = input("Insira a quantidade de coordenadas (maior ou igual a 3), de forma que a figura fique sempre à esquerda: ")
         if Num_Vertices.isnumeric():
             Num_Vertices = int(Num_Vertices)
             break
