@@ -8,7 +8,7 @@ Lista_Y = []
 def Escolha_Parametros():
     #Garantia que a figura possa ser executada no programa
     while True:
-        Num_Vertices = input("Insira a quantidade de coordenadas (maior ou igual a 3), de forma que a figura fique sempre à esquerda: ")
+        Num_Vertices = input("Insira a quantidade de coordenadas (maior ou igual a 3), de forma que a poligonal de contorno fique sempre a esquerda e permaneça fechada: ")
         if Num_Vertices.isnumeric():
             Num_Vertices = int(Num_Vertices)
             break
