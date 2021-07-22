@@ -1,22 +1,22 @@
 import math
 
 #variáveis Globais
-Num_Vertices = 0
-Lista_X = []
-Lista_Y = []
+Numero_Vertices = 0
+ListaX = []
+ListaY = []
 
 def Escolha_Parametros():
     #Garantia que a figura possa ser executada no programa
     while True:
-        Num_Vertices = input("Insira a quantidade de coordenadas (maior ou igual a 3), de forma que a poligonal de contorno fique sempre a esquerda e permaneça fechada: ")
-        if Num_Vertices.isnumeric():
-            Num_Vertices = int(Num_Vertices)
+        Numero_Vertices = input("Insira a quantidade de coordenadas (maior ou igual a 3), de forma que a poligonal de contorno fique sempre a esquerda e permaneça fechada: ")
+        if Numero_Vertices.isnumeric():
+            Numero_Vertices = int(Numero_Vertices)
             break
         else:
             print("Não é um valor válido!")
             continue
-    Calculo_Peca(Num_Vertices)
-    return Num_Vertices
+    Calculo_Peca(Numero_Vertices)
+    return Numero_Vertices
 
 
 def Calculo_Peca(Numero_Vertices):
@@ -28,15 +28,15 @@ def Calculo_Peca(Numero_Vertices):
             if isnumber(X) and isnumber(Y):
                 X = float(X)
                 Y = float(Y)
-                Lista_X.append(X)
-                Lista_Y.append(Y)
+                ListaX.append(X)
+                ListaY.append(Y)
                 break
             else:
                 print("Por favor, digite somente valores numéricos!")
                 continue
 
-    Propriedades_Mecanicas(Numero_Vertices, Lista_X, Lista_Y)
-    return Lista_X, Lista_Y
+    Propriedades_Mecanicas(Numero_Vertices, ListaX, ListaY)
+    return ListaX, ListaY
 
 def Propriedades_Mecanicas(Numero_Vertices, ListaX, ListaY):
     Area = 0
