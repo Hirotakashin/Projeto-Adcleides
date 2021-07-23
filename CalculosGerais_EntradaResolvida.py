@@ -1,75 +1,76 @@
 import math
+from matplotlib import pyplot
 
 #variáveis Globais
-Numero_Vertices = 0
-ListaX = []
-ListaY = []
+
+Lista_X = []
+Lista_Y = []
 
 def Escolha_Parametros():
     #Garantia que a figura possa ser executada no programa
     while True:
-        Numero_Vertices = input("Insira a quantidade de coordenadas (maior ou igual a 3), de forma que a poligonal de contorno fique sempre a esquerda e permaneça fechada: ")
-        if Numero_Vertices.isnumeric():
-            Numero_Vertices = int(Numero_Vertices)
+        Num_Vertices = input("Defina o número de vértices a serem considerados: ")
+        if Num_Vertices.isnumeric():
+            Num_Vertices = int(Num_Vertices)
             break
         else:
             print("Não é um valor válido!")
             continue
-    Calculo_Peca(Numero_Vertices)
-    return Numero_Vertices
+    Calculo_Peca(Num_Vertices)
+
 
 
 def Calculo_Peca(Numero_Vertices):
+    Num_Vertices = Numero_Vertices
     for numero in range(1, Numero_Vertices + 1):
-        #Laço de repetição para verificação se o Número é int ou float
+        #Laço de repetição para verificação se o Número é float
         while True:
             X = input(f"Insira o valor do {numero}° X: ")
             Y = input(f"Insira o valor do {numero}° Y: ")
             if isnumber(X) and isnumber(Y):
                 X = float(X)
                 Y = float(Y)
-                ListaX.append(X)
-                ListaY.append(Y)
+                Lista_X.append(X)
+                Lista_Y.append(Y)
                 break
             else:
                 print("Por favor, digite somente valores numéricos!")
                 continue
+    Propriedades_Mecanicas(Num_Vertices, Lista_X, Lista_Y)
 
-    Propriedades_Mecanicas(Numero_Vertices, ListaX, ListaY)
-    return ListaX, ListaY
 
-def Propriedades_Mecanicas(Numero_Vertices, ListaX, ListaY):
+def Propriedades_Mecanicas(Numero_Vertices ,Lista_X, Lista_Y):
     Area = 0
     PrimeiroMomAreaX = 0
     PrimeiroMomAreaY = 0
     SegundoMomAreaX = 0
     SegundoMomAreaY = 0
     ProdInerciaSecao = 0
-    for i in range(1, Numero_Vertices + 1):
+    for i in range(0, Numero_Vertices):
         #Calculo de Área
-        iteravel = (ListaX[i - 1]*ListaY[i])-(ListaY[i - 1]*ListaX[i])
+        iteravel = (Lista_X[i - 1] * Lista_Y[i]) - (Lista_Y[i - 1] * Lista_X[i])
         Area = (1 / 2) * iteravel + Area
 
         # Momento de Primeira Ordem
-        PrimeiroMomAreaY =(1 / 6) * iteravel * (ListaX[i - 1] + ListaX[i]) + PrimeiroMomAreaY
-        PrimeiroMomAreaX = (1 / 6) * iteravel * (ListaY[i - 1] + ListaY[i]) + PrimeiroMomAreaX
+        PrimeiroMomAreaY = (1 / 6) * iteravel * (Lista_X[i - 1] + Lista_X[i]) + PrimeiroMomAreaY
+        PrimeiroMomAreaX = (1 / 6) * iteravel * (Lista_Y[i - 1] + Lista_Y[i]) + PrimeiroMomAreaX
 
         # Momento de Segunda Ordem
-        SegundoMomAreaY = (1 / 12) * iteravel * ((ListaX[i - 1] ** 2) + (ListaX[i - 1] * ListaX[i])
-                                                     + (ListaY[i] ** 2)) + SegundoMomAreaY
-        SegundoMomAreaX =(1 / 12) * iteravel * ((ListaY[i - 1] ** 2) + (ListaY[i - 1] * ListaY[i])
-                                                     + (ListaY[i] ** 2)) + SegundoMomAreaX
+        SegundoMomAreaY = (1 / 12) * iteravel * ((Lista_X[i - 1] ** 2) + (Lista_X[i - 1] * Lista_X[i])
+                                                 + (Lista_X[i] ** 2)) + SegundoMomAreaY
+        SegundoMomAreaX = (1 / 12) * iteravel * ((Lista_Y[i - 1] ** 2) + (Lista_Y[i - 1] * Lista_Y[i])
+                                                 + (Lista_Y[i] ** 2)) + SegundoMomAreaX
 
         # Produto de Inercia da Seção
-        ProdInerciaSecao =(1 / 24) * iteravel * (2 * ListaX[i - 1] * ListaY[i - 1] + (ListaX[i - 1] * ListaY[i])
-                                   + (ListaX[i] * ListaY[i - 1])
-                                   + 2 * ListaX[i] * ListaY[i]) + ProdInerciaSecao
+        ProdInerciaSecao = (1 / 24) * iteravel * (2 * Lista_X[i - 1] * Lista_Y[i - 1] + (Lista_X[i - 1] * Lista_Y[i])
+                                                  + (Lista_X[i] * Lista_Y[i - 1])
+                                                  + 2 * Lista_X[i] * Lista_Y[i]) + ProdInerciaSecao
     Area = abs(Area)
-    print(f"Área = {Area} u.a²")
-    print(f"Momento de Primeira Ordem em X = {PrimeiroMomAreaX}")
-    print(f"Momento de Primeira Ordem em Y = {PrimeiroMomAreaY}")
-    print(f"Momento de Segunda Ordem em X = {SegundoMomAreaX}")
-    print(f"Momento de Segunda Ordem em Y = {SegundoMomAreaY}")
+    print(f"Área = {round(Area, 4)} u.a²")
+    print(f"Momento de Primeira Ordem em X = {round(PrimeiroMomAreaX, 4)}")
+    print(f"Momento de Primeira Ordem em Y = {round(PrimeiroMomAreaY, 4)}")
+    print(f"Momento de Segunda Ordem em X = {round(SegundoMomAreaX, 4)}")
+    print(f"Momento de Segunda Ordem em Y = {round(SegundoMomAreaY, 4)}")
     print(f"Produto de Inércia = {ProdInerciaSecao}")
 
     #Centro de Inércia e Raios de Giração
@@ -77,14 +78,14 @@ def Propriedades_Mecanicas(Numero_Vertices, ListaX, ListaY):
 
     Centro_Inercia_Y = PrimeiroMomAreaX / Area
 
-    Raio_Giracao_X = math.sqrt(SegundoMomAreaX / Area)
+    Raio_Giracao_X = math.sqrt(abs(SegundoMomAreaX) / Area)
 
-    Raio_Giraaco_Y = math.sqrt(SegundoMomAreaY / Area)
+    Raio_Giraaco_Y = math.sqrt(abs(SegundoMomAreaY) / Area)
 
-    print(f"Centro de Inércia X = {Centro_Inercia_X}")
-    print(f"Centro de Inércia Y = {Centro_Inercia_Y}")
-    print(f"Centro de Raio de Giração X = {Raio_Giracao_X}")
-    print(f"Centro de Raio de Giração Y = {Raio_Giraaco_Y}")
+    print(f"Centro de Inércia X = {round(Centro_Inercia_X, 4)}")
+    print(f"Centro de Inércia Y = {round(Centro_Inercia_Y, 4)}")
+    print(f"Centro de Raio de Giração X = {round(Raio_Giracao_X, 4)}")
+    print(f"Centro de Raio de Giração Y = {round(Raio_Giraaco_Y, 4)}")
 
     #Transladar Propriedades para os Eixos Centroidais e Determinação da Seção Principal
     Inercia_Transladada_X = SegundoMomAreaX - Area * (Centro_Inercia_Y ** 2)
@@ -93,32 +94,29 @@ def Propriedades_Mecanicas(Numero_Vertices, ListaX, ListaY):
 
     Inercia_Transladada_XY = ProdInerciaSecao - Area * Centro_Inercia_X * Centro_Inercia_Y
 
-    print(f"Inercia Transladada para o eixo X:{Inercia_Transladada_X}")
-    print(f"Inercia Transladada para o eixo Y:{Inercia_Transladada_Y}")
-    print(f"Inercia Transladada para o eixo XY:{Inercia_Transladada_XY}")
+    print(f"Inercia Transladada para o eixo X:{round(Inercia_Transladada_X, 4)}")
+    print(f"Inercia Transladada para o eixo Y:{round(Inercia_Transladada_Y, 4)}")
+    print(f"Inercia Transladada para o eixo XY:{round(Inercia_Transladada_XY, 4)}")
 
     #Angulos
-
     Angulo_rad = (1/2) * math.atan(2*(Inercia_Transladada_XY/(Inercia_Transladada_Y-Inercia_Transladada_X)))
 
     Angulo_dg = Angulo_rad*(180/math.pi)
 
-    print(f"Angulo:{Angulo_dg}°")
+    print(f"Angulo:{round(Angulo_dg, 4)}°")
 
     #InerciasPrincipais
+    Inercia_Principal_X = Inercia_Transladada_Y*(math.sin(Angulo_rad))**2 - 2*math.sin(Angulo_rad) * math.cos(Angulo_rad) \
+                          + Inercia_Transladada_X*(math.cos(Angulo_rad))**2
 
-    Inercia_Principal_X = Inercia_Transladada_Y*(math.sin(Angulo_dg))**2 - 2*math.sin(Angulo_dg) * math.cos(Angulo_dg) \
-                          + Inercia_Transladada_X*(math.cos(Angulo_dg))**2
+    Inercia_Principal_Y = Inercia_Transladada_Y*(math.cos(Angulo_rad))**2 - 2*math.sin(Angulo_rad) * math.cos(Angulo_rad) \
+                          + Inercia_Transladada_X*(math.sin(Angulo_rad))**2
 
-    Inercia_Principal_Y = Inercia_Transladada_Y*(math.cos(Angulo_dg))**2 - 2*math.sin(Angulo_dg) * math.cos(Angulo_dg) \
-                          + Inercia_Transladada_X*(math.sin(Angulo_dg))**2
-
-    print(f"Inercia X no eixo Principal: {Inercia_Principal_X}")
-    print(f"Inercia Y no eixo Principal: {Inercia_Principal_Y}")
+    print(f"Inercia X no eixo Principal: {round(Inercia_Principal_X, 4)}")
+    print(f"Inercia Y no eixo Principal: {round(Inercia_Principal_Y, 4)}")
 
     #Parâmetros do Circulo de Mohr
-
-    Raio_Mohr = math.sqrt(Inercia_Transladada_XY**2 + ((Inercia_Transladada_Y - Inercia_Transladada_X)/2)**2)
+    Raio_Mohr = math.sqrt(abs(Inercia_Transladada_XY**2 + ((Inercia_Transladada_Y - Inercia_Transladada_X)/2)**2))
 
     Centro_Circulo_Mohr = (Inercia_Transladada_Y + Inercia_Transladada_X)/2
 
@@ -131,8 +129,6 @@ def isnumber(value):#Verificador para as entradas na lista
     except ValueError:
          return False
     return True
-
-
 
 if __name__ == '__main__':
     Escolha_Parametros()
