@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>wdw_Main_Window</class>
+ <widget class="QMainWindow" name="wdw_Main_Window">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>974</width>
+    <height>555</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>974</width>
+    <height>555</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Seção Geométrica - UI 0.1</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="gbr_SectionPoints">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>301</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>gbr_SectionPoints</string>
+    </property>
+    <widget class="QLabel" name="lbl_PointX">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_PointX</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_PointY">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>20</y>
+       <width>81</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_PointY</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_PointX">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>40</y>
+       <width>70</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_PointY">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>40</y>
+       <width>70</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_AddItem">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>20</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>btn_AddItem</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_DeleteItem">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>50</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>btn_DeleteItem</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_ClearItem">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>80</y>
+       <width>91</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>btn_ClearItem</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_Finalized">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>80</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>btn_Finalized</string>
+     </property>
+    </widget>
+    <widget class="QListWidget" name="ltw_Points">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>271</width>
+       <height>321</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gbr_View_Section">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>10</y>
+      <width>321</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>gbr_View_Section</string>
+    </property>
+    <widget class="QLabel" name="lbl_image_viewSection">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>301</width>
+       <height>221</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>301</width>
+       <height>221</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>301</width>
+       <height>221</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>white.jpg</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+     <property name="wordWrap">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="gbr_Geometrics_Properties">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>10</y>
+      <width>311</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>gbr_Geometrics_Properties</string>
+    </property>
+    <widget class="QLabel" name="lbl_Area">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>71</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_Area</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_area">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>20</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_FirstOrderMomentX">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_FirstOrderMomentX</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_FirstOrderMomentX">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>50</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_FirstOrderMomentY">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_FirstOrderMomentY</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_FirstOrderMomentY">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>80</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_SecondOrderMomentX">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>110</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_SecondOrderMomentX</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_SecondOrderMomentX">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>110</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_SecondOrderMomentY">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_SecondOrderMomentY</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_SecondOrderMomentY">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>140</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_InertiaProduct">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>170</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_InertiaProduct</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_InertiaProduct">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>170</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_InertiaCenterX">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>200</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_InertiaCenterX">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>200</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_InertiaCenterX</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_InertiaCenterY">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>230</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_InertiaCenterY">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>230</y>
+       <width>111</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_InertiaCenterY</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_RotationRadiusCenterX">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>260</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_RotationRadiusCenterX">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>260</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_RotationRadiusCenterX</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_RotationRadiusCenterY">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>290</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_RotationRadiusCenterY">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>290</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_RotationRadiusCenterY</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_TranslatedIertiaX">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>320</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_TranslatedInertiaX">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>320</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_TranslatedInertiaX</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_TranslatedIertiaY">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>350</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_TranslatedInertiaY">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>350</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_TranslatedInertiaY</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_TranslatedInertiaXY">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>380</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_TranslatedInertiaXY</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_TranslatedIertiaXY">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>380</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_AngleDg">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>410</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_AngleDg</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_AngleDg">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>410</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_MainInertiaX">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>440</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_MainInertiaX">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>440</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_MainInertiaX</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_MainInertiaY">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>470</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_MainInertiaY">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>470</y>
+       <width>131</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_MainInertiaY</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QComboBox" name="Cbx_Entrace">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>20</y>
+      <width>141</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="currentIndex">
+     <number>-1</number>
+    </property>
+    <item>
+     <property name="text">
+      <string>Seções Convencionais</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Pontos de Seção</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="lbl_Entrace">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>lbl_Entrace</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="gbr_ConventionalSections">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>260</y>
+      <width>321</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>grb_ConventionalSections</string>
+    </property>
+    <widget class="QLineEdit" name="let_hf">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>110</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_bw">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>150</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_hf">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>90</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_hf</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_hw">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>170</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_hw</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_bf">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>70</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_bw">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>130</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_bw</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="cbx_SectionDetermination">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>20</y>
+       <width>121</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="editable">
+      <bool>false</bool>
+     </property>
+     <property name="currentIndex">
+      <number>-1</number>
+     </property>
+     <item>
+      <property name="text">
+       <string>Seção em T</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Seção em I</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Seção Retangular</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Seção Quadrada</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="lbl_SectionDetermination">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>20</y>
+       <width>131</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_SectionDetermination</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_bf">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>50</y>
+       <width>47</width>
+       <height>13</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>lbl_bf</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="let_hw">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>190</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_Conventional">
+     <property name="geometry">
+      <rect>
+       <x>230</x>
+       <y>220</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>btn_Conventional</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="lbl_image_SectionDetermination">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>181</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap>white.jpg</pixmap>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>974</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="Mnb_Manual">
+    <property name="title">
+     <string>Mnb_Manual</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="Mnb_Configs">
+    <property name="title">
+     <string>Mnb_Configs</string>
+    </property>
+    <widget class="QMenu" name="Qmn_Theme">
+     <property name="title">
+      <string>Qmn_Theme</string>
+     </property>
+     <addaction name="Qac_light_theme"/>
+     <addaction name="Qac_dark_theme"/>
+    </widget>
+    <widget class="QMenu" name="Qmn_language">
+     <property name="title">
+      <string>Qmn_language</string>
+     </property>
+     <addaction name="Qac_ptBR"/>
+     <addaction name="Qac_enUS"/>
+    </widget>
+    <addaction name="Qmn_language"/>
+    <addaction name="separator"/>
+    <addaction name="Qmn_Theme"/>
+   </widget>
+   <addaction name="Mnb_Manual"/>
+   <addaction name="Mnb_Configs"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="Qac_pt_BR">
+   <property name="text">
+    <string>Qac_pt_BR</string>
+   </property>
+  </action>
+  <action name="Qac_en_US">
+   <property name="text">
+    <string>Qac_en_US</string>
+   </property>
+  </action>
+  <action name="Qac_es_ES">
+   <property name="text">
+    <string>Qac_sp_SP</string>
+   </property>
+  </action>
+  <action name="Qac_Light_Theme">
+   <property name="text">
+    <string>Qac_Light_Theme</string>
+   </property>
+  </action>
+  <action name="Qac_Dark_Theme">
+   <property name="text">
+    <string>Qac_Dark_Theme</string>
+   </property>
+  </action>
+  <action name="Qac_dark_theme">
+   <property name="text">
+    <string>Qac_dark_Theme</string>
+   </property>
+  </action>
+  <action name="Qac_light_theme">
+   <property name="text">
+    <string>Qac_light_theme</string>
+   </property>
+  </action>
+  <action name="Qac_ptBR">
+   <property name="text">
+    <string>Qac_pt_BR</string>
+   </property>
+  </action>
+  <action name="Qac_enUS">
+   <property name="text">
+    <string>Qac_en_US</string>
+   </property>
+  </action>
+  <action name="Qac_esES">
+   <property name="text">
+    <string>Qac_es_ES</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
